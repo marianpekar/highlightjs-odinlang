@@ -9,6 +9,10 @@
   },
   "author": "Marian Pekár",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marianpekar/highlightjs-odinlang/issues"
+  },
+  "homepage": "https://github.com/marianpekar/highlightjs-odinlang#readme",
   "keywords": [
     "odin",
     "odinlang",
