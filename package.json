@@ -5,7 +5,7 @@
   "main": "src/languages/odin.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/marianpekar/highlightjs-odin.git"
+    "url": "git+https://github.com/marianpekar/highlightjs-odinlang.git"
   },
   "author": "Marian Pekár",
   "license": "MIT",
