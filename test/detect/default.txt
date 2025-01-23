@@ -1,0 +1,36 @@
+﻿package main
+
+import "core:fmt"
+
+Foo :: struct {
+    x: int,
+    y: string,
+    z: bool
+}
+
+main :: proc() {
+    x: f32 
+    x = 1.0
+    y := 2
+    pi :: 3.14
+    str := "Odin"
+    r := 'O'
+
+    for i := 0; i < 10; i += 1 { }
+    if x > y { }
+
+    fmt.println("Hellope!")
+
+    switch arch := ODIN_ARCH; arch {
+    case .i386, .wasm32, .arm32:
+    fmt.println("32 bit")
+    case .amd64, .wasm64p32, .arm64, .riscv64:
+    fmt.println("64 bit")
+    case .Unknown:
+    fmt.println("Unknown architecture")
+    }
+}
+
+multiply :: proc(x: int, y: int) -> int {
+    return x * y
+}

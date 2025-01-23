@@ -1,0 +1,36 @@
+﻿<span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;core:fmt&quot;</span>
+
+Foo :: <span class="hljs-keyword">struct</span> {
+    x: <span class="hljs-keyword">int</span>,
+    y: <span class="hljs-keyword">string</span>,
+    z: <span class="hljs-keyword">bool</span>
+}
+
+main :: <span class="hljs-keyword">proc</span>() {
+    x: <span class="hljs-keyword">f32</span> 
+    x = <span class="hljs-number">1.0</span>
+    y := <span class="hljs-number">2</span>
+    pi :: <span class="hljs-number">3.14</span>
+    str := <span class="hljs-string">&quot;Odin&quot;</span>
+    r := <span class="hljs-string">&#x27;O&#x27;</span>
+
+    <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i += <span class="hljs-number">1</span> { }
+    <span class="hljs-keyword">if</span> x &gt; y { }
+
+    fmt.println(<span class="hljs-string">&quot;Hellope!&quot;</span>)
+
+    <span class="hljs-keyword">switch</span> arch := ODIN_ARCH; arch {
+    <span class="hljs-keyword">case</span> .i386, .wasm32, .arm32:
+    fmt.println(<span class="hljs-string">&quot;32 bit&quot;</span>)
+    <span class="hljs-keyword">case</span> .amd64, .wasm64p32, .arm64, .riscv64:
+    fmt.println(<span class="hljs-string">&quot;64 bit&quot;</span>)
+    <span class="hljs-keyword">case</span> .Unknown:
+    fmt.println(<span class="hljs-string">&quot;Unknown architecture&quot;</span>)
+    }
+}
+
+multiply :: <span class="hljs-keyword">proc</span>(x: <span class="hljs-keyword">int</span>, y: <span class="hljs-keyword">int</span>) -&gt; <span class="hljs-keyword">int</span> {
+    <span class="hljs-keyword">return</span> x * y
+}
