@@ -15,5 +15,9 @@
     "odin-language",
     "highlight.js",
     "highlightjs"
-  ]
+  ],
+  "exports": {
+    "import": "./src/languages/es/odin.es.js",
+    "require": "./src/languages/odin.js"
+  }
 }

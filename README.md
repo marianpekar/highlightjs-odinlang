@@ -25,6 +25,10 @@ If you're using Node / Webpack / Rollup / Browserify, etc, simply require the la
 var hljs = require('highlight.js');
 var hljsOdin = require('highlightjs-odinlang');
 
+// or with ES modules
+import hljs from 'highlight.js';
+import hljsOdin from "highlightjs-odinlang"
+
 hljs.registerLanguage("odin", hljsOdin);
 hljs.highlightAll();
 ```

@@ -5,7 +5,7 @@ Description: Odin is a general-purpose programming language with distinct typing
 Website: https://odin-lang.org/
 Category: common
 */
-module.exports = function (hljs) {
+export default function (hljs) {
   const TYPES = [
     "bool",
     "b8",
