@@ -106,7 +106,7 @@ module.exports = function (hljs) {
     "where"
   ]
 
-  const BUILD_IN = [
+  const BUILT_IN = [
     "abs",
     "align_of",
     "cap",
@@ -140,9 +140,10 @@ module.exports = function (hljs) {
     case_sensitive: true,
     aliases: ["odin", "odinlang", "odin-lang", "language-odin"],
     keywords: {
-      keyword: KEYWORDS.concat(TYPES),
+      keyword: KEYWORDS,
+      type: TYPES,
       literal: "true false nil",
-      built_in: BUILD_IN
+      built_in: BUILT_IN
     },
     illegal: "</",
     contains: [hljs.C_LINE_COMMENT_MODE, hljs.C_BLOCK_COMMENT_MODE, {

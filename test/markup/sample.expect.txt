@@ -3,13 +3,13 @@
 <span class="hljs-keyword">import</span> <span class="hljs-string">&quot;core:fmt&quot;</span>
 
 Foo :: <span class="hljs-keyword">struct</span> {
-    x: <span class="hljs-keyword">int</span>,
-    y: <span class="hljs-keyword">string</span>,
-    z: <span class="hljs-keyword">bool</span>
+    x: <span class="hljs-type">int</span>,
+    y: <span class="hljs-type">string</span>,
+    z: <span class="hljs-type">bool</span>
 }
 
 main :: <span class="hljs-keyword">proc</span>() {
-    x: <span class="hljs-keyword">f32</span> 
+    x: <span class="hljs-type">f32</span> 
     x = <span class="hljs-number">1.0</span>
     y := <span class="hljs-number">2</span>
     pi :: <span class="hljs-number">3.14</span>
@@ -31,6 +31,6 @@ main :: <span class="hljs-keyword">proc</span>() {
     }
 }
 
-multiply :: <span class="hljs-keyword">proc</span>(x: <span class="hljs-keyword">int</span>, y: <span class="hljs-keyword">int</span>) -&gt; <span class="hljs-keyword">int</span> {
+multiply :: <span class="hljs-keyword">proc</span>(x: <span class="hljs-type">int</span>, y: <span class="hljs-type">int</span>) -&gt; <span class="hljs-type">int</span> {
     <span class="hljs-keyword">return</span> x * y
 }
