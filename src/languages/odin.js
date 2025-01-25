@@ -126,7 +126,7 @@ module.exports = function (hljs) {
         ]
       },
       {
-        className: 'title', // function call
+        className: 'built_in', // function call
         begin: /\b(?!proc\b)([A-Za-z_][A-Za-z0-9_]*)(?=\s*\()/,
         excludeEnd: true,
       }

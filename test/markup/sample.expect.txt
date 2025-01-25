@@ -16,26 +16,28 @@ Foo :: <span class="hljs-keyword">struct</span> {
     str := <span class="hljs-string">&quot;Odin&quot;</span>
     r := <span class="hljs-string">&#x27;O&#x27;</span>
 
+    foo := <span class="hljs-built_in">new</span>(Foo)
+
     <span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i += <span class="hljs-number">1</span> { }
     <span class="hljs-keyword">if</span> x &gt; y { }
 
-    fmt.<span class="hljs-title">println</span>(<span class="hljs-string">&quot;Hellope!&quot;</span>)
+    fmt.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;Hellope!&quot;</span>)
 
     <span class="hljs-keyword">switch</span> arch := ODIN_ARCH; arch {
     <span class="hljs-keyword">case</span> .i386, .wasm32, .arm32:
-    fmt.<span class="hljs-title">println</span>(<span class="hljs-string">&quot;32 bit&quot;</span>)
+    fmt.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;32 bit&quot;</span>)
     <span class="hljs-keyword">case</span> .amd64, .wasm64p32, .arm64, .riscv64:
-    fmt.<span class="hljs-title">println</span>(<span class="hljs-string">&quot;64 bit&quot;</span>)
+    fmt.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;64 bit&quot;</span>)
     <span class="hljs-keyword">case</span> .Unknown:
-    fmt.<span class="hljs-title">println</span>(<span class="hljs-string">&quot;Unknown architecture&quot;</span>)
+    fmt.<span class="hljs-built_in">println</span>(<span class="hljs-string">&quot;Unknown architecture&quot;</span>)
     }
     
-    <span class="hljs-title">multiply</span>(<span class="hljs-title">int</span>(x), <span class="hljs-number">2.3</span>))
-    <span class="hljs-title">divide</span>(pi,x)
+    <span class="hljs-built_in">multiply</span>(<span class="hljs-built_in">int</span>(x), <span class="hljs-number">2.3</span>))
+    <span class="hljs-built_in">divide</span>(pi,x)
 }
 
 <span class="hljs-function"><span class="hljs-title">multiply</span> :: <span class="hljs-keyword">proc</span><span class="hljs-params">(x: <span class="hljs-type">int</span>, y: <span class="hljs-type">int</span>)</span> -&gt; <span class="hljs-type">f32</span> </span>{
-    <span class="hljs-keyword">return</span> <span class="hljs-title">f32</span>(x * y)
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">f32</span>(x * y)
 }
 
 <span class="hljs-function"><span class="hljs-title">divide</span>::<span class="hljs-keyword">proc</span><span class="hljs-params">(x:<span class="hljs-type">f32</span>,y:<span class="hljs-type">f32</span>)</span>-&gt;<span class="hljs-type">f32</span></span>{<span class="hljs-keyword">return</span> x/y}

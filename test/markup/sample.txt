@@ -16,6 +16,8 @@ main :: proc() {
     str := "Odin"
     r := 'O'
 
+    foo := new(Foo)
+
     for i := 0; i < 10; i += 1 { }
     if x > y { }
 
