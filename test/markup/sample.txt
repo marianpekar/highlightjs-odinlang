@@ -29,8 +29,13 @@ main :: proc() {
     case .Unknown:
     fmt.println("Unknown architecture")
     }
+    
+    multiply(int(x), 2.3))
+    divide(pi,x)
 }
 
 multiply :: proc(x: int, y: int) -> f32 {
     return f32(x * y)
 }
+
+divide::proc(x:f32,y:f32)->f32{return x/y}

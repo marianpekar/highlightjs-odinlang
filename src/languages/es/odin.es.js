@@ -89,7 +89,7 @@ export default function (hljs) {
         ]
       },
       {
-        className: 'function',
+        className: 'function', // declaration
         begin: /\b([A-Za-z_][A-Za-z0-9_]*)\s*::\s*proc\b/,
         end: /[{\n]/,
         excludeEnd: true,
@@ -124,6 +124,11 @@ export default function (hljs) {
             relevance: 0
           },
         ]
+      },
+      {
+        className: 'title', // function call
+        begin: /\b(?!proc\b)([A-Za-z_][A-Za-z0-9_]*)(?=\s*\()/,
+        excludeEnd: true,
       }
     ]
   };
