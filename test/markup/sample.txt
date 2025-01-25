@@ -31,6 +31,6 @@ main :: proc() {
     }
 }
 
-multiply :: proc(x: int, y: int) -> int {
-    return x * y
+multiply :: proc(x: int, y: int) -> f32 {
+    return f32(x * y)
 }

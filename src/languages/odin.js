@@ -61,21 +61,70 @@ module.exports = function (hljs) {
       built_in: BUILT_IN
     },
     illegal: "</",
-    contains: [hljs.C_LINE_COMMENT_MODE, hljs.C_BLOCK_COMMENT_MODE, {
-      className: "string",
-      variants: [hljs.QUOTE_STRING_MODE, {
-        begin: "'",
-        end: "[^\\\\]'"
-      }, {
-        begin: "`",
-        end: "`"
-      }]
-    }, {
-      className: "number",
-      variants: [{
-        begin: hljs.C_NUMBER_RE + "[ijk]",
-        relevance: 1
-      }, hljs.C_NUMBER_MODE]
-    }]
-  }
+    contains: [
+      hljs.C_LINE_COMMENT_MODE,
+      hljs.C_BLOCK_COMMENT_MODE,
+      {
+        className: "string",
+        variants: [
+          hljs.QUOTE_STRING_MODE,
+          {
+            begin: "'",
+            end: "[^\\\\]'"
+          },
+          {
+            begin: "`",
+            end: "`"
+          }
+        ]
+      },
+      {
+        className: "number",
+        variants: [
+          {
+            begin: hljs.C_NUMBER_RE + "[ijk]",
+            relevance: 1
+          },
+          hljs.C_NUMBER_MODE
+        ]
+      },
+      {
+        className: 'function',
+        begin: /\b([A-Za-z_][A-Za-z0-9_]*)\s*::\s*proc\b/,
+        end: /[{\n]/,
+        excludeEnd: true,
+        returnBegin: true,
+        contains: [
+          {
+            className: 'title',
+            begin: /\b[A-Za-z_][A-Za-z0-9_]*(?=\s*::\s*proc\b)/,
+            relevance: 0
+          },
+          {
+            className: 'keyword',
+            begin: /\bproc\b/,
+            relevance: 0
+          },
+          {
+            className: 'params',
+            begin: /\(/,
+            end: /\)/,
+            illegal: /["']/,
+            contains: [
+              {
+                className: 'type',
+                begin: /(?<=:\s*)[A-Za-z_][A-Za-z0-9_.]*/,
+                relevance: 0
+              },
+            ]
+          },
+          {
+            className: 'type',
+            begin: /(?<=->\s*)[A-Za-z_][A-Za-z0-9_.]*/,
+            relevance: 0
+          },
+        ]
+      }
+    ]
+  };
 };
