@@ -113,13 +113,13 @@ module.exports = function (hljs) {
             contains: [
               {
                 className: 'type',
-                begin: /(?<=:\s*)[A-Za-z_][A-Za-z0-9_.]*/,
+                begin: /(?<=:\s*)[\^A-Za-z_][A-Za-z0-9_.]*/,
                 relevance: 0
               },
             ]
           },
           {
-            className: 'type',
+            className: 'type', // return type
             begin: /(?<=->\s*)[A-Za-z_][A-Za-z0-9_.]*/,
             relevance: 0
           },
@@ -131,8 +131,27 @@ module.exports = function (hljs) {
         excludeEnd: true,
       },
       {
-        className: 'title', // struct declaration
-        begin: /\b[A-Za-z_][A-Za-z0-9_]*(?=\s*::\s*struct\b)/,
+        className: 'struct',
+        begin: /\b([A-Za-z_][A-Za-z0-9_]*)\s*::\s*struct\b/,
+        end: /[}]/,
+        returnBegin: true,
+        contains: [
+          {
+            className: 'title',
+            begin: /\b[A-Za-z_][A-Za-z0-9_]*(?=\s*::\s*struct\b)/,
+            relevance: 0
+          },
+          {
+            className: 'keyword',
+            begin: /\bstruct\b/,
+            relevance: 0
+          },
+          {
+            className: 'type',
+            begin: /(?<=:\s*)[\^A-Za-z_][A-Za-z0-9_.]*/,
+            relevance: 0
+          },
+        ]
       }
     ]
   };

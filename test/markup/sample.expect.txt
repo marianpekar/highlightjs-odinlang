@@ -2,11 +2,13 @@
 
 <span class="hljs-keyword">import</span> <span class="hljs-string">&quot;core:fmt&quot;</span>
 
-<span class="hljs-title">Foo</span> :: <span class="hljs-keyword">struct</span> {
+<span class="hljs-struct"><span class="hljs-title">Foo</span> :: <span class="hljs-keyword">struct</span> {
     x: <span class="hljs-type">int</span>,
     y: <span class="hljs-type">string</span>,
     z: <span class="hljs-type">bool</span>
-}
+    bar: <span class="hljs-type">Bar</span>
+    bar_p: <span class="hljs-type">^Bar</span>
+}</span>
 
 <span class="hljs-function"><span class="hljs-title">main</span> :: <span class="hljs-keyword">proc</span><span class="hljs-params">()</span> </span>{
     x: <span class="hljs-type">f32</span> 
@@ -41,3 +43,7 @@
 }
 
 <span class="hljs-function"><span class="hljs-title">divide</span>::<span class="hljs-keyword">proc</span><span class="hljs-params">(x:<span class="hljs-type">f32</span>,y:<span class="hljs-type">f32</span>)</span>-&gt;<span class="hljs-type">f32</span></span>{<span class="hljs-keyword">return</span> x/y}
+
+<span class="hljs-function"><span class="hljs-title">increment</span> :: <span class="hljs-keyword">proc</span><span class="hljs-params">(x: <span class="hljs-type">^int</span>)</span> </span>{
+    x = x + <span class="hljs-number">1</span>
+}

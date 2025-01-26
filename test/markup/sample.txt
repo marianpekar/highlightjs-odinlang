@@ -6,6 +6,8 @@ Foo :: struct {
     x: int,
     y: string,
     z: bool
+    bar: Bar
+    bar_p: ^Bar
 }
 
 main :: proc() {
@@ -41,3 +43,7 @@ multiply :: proc(x: int, y: int) -> f32 {
 }
 
 divide::proc(x:f32,y:f32)->f32{return x/y}
+
+increment :: proc(x: ^int) {
+    x = x + 1
+}
