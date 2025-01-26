@@ -8,6 +8,9 @@
     z: <span class="hljs-type">bool</span>
     bar: <span class="hljs-type">Bar</span>
     bar_p: <span class="hljs-type">^Bar</span>
+    vector: <span class="hljs-type">[3]f32</span>
+    dyn: <span class="hljs-type">[dynamic]Bar</span>
+    matrix:<span class="hljs-type">[4][4]f32</span>
 }</span>
 
 <span class="hljs-function"><span class="hljs-title">main</span> :: <span class="hljs-keyword">proc</span><span class="hljs-params">()</span> </span>{
@@ -17,6 +20,7 @@
     pi :: <span class="hljs-number">3.14</span>
     str := <span class="hljs-string">&quot;Odin&quot;</span>
     r := <span class="hljs-string">&#x27;O&#x27;</span>
+    vector: [<span class="hljs-number">3</span>]<span class="hljs-type">f32</span>
 
     foo := <span class="hljs-built_in">new</span>(Foo)
 
@@ -47,3 +51,6 @@
 <span class="hljs-function"><span class="hljs-title">increment</span> :: <span class="hljs-keyword">proc</span><span class="hljs-params">(x: <span class="hljs-type">^int</span>)</span> </span>{
     x = x + <span class="hljs-number">1</span>
 }
+
+<span class="hljs-function"><span class="hljs-title">do_something_with_matrix</span> :: <span class="hljs-keyword">proc</span><span class="hljs-params">(mat: <span class="hljs-type">[4][4]f32</span>)</span> -&gt; <span class="hljs-type">[4][4]f32</span> </span>{ }
+

@@ -49,7 +49,10 @@ module.exports = function (hljs) {
     "soa_zip",   "swizzle",         "transmute",  "type_info_of", "type_of",
     "typeid_of"
   ];
-
+  
+  const PARAM_TYPE_REGEX= /(?<=:\s*)[\[^A-Za-z_][A-Za-z0-9_.\][]*/
+  const RETURN_TYPE_REGEX = /(?<=->\s*)[\[A-Za-z_][A-Za-z0-9_.\][]*/
+  
   return {
     name: "Odin",
     case_sensitive: true,
@@ -113,14 +116,14 @@ module.exports = function (hljs) {
             contains: [
               {
                 className: 'type',
-                begin: /(?<=:\s*)[\^A-Za-z_][A-Za-z0-9_.]*/,
+                begin: PARAM_TYPE_REGEX,
                 relevance: 0
               },
             ]
           },
           {
-            className: 'type', // return type
-            begin: /(?<=->\s*)[A-Za-z_][A-Za-z0-9_.]*/,
+            className: 'type',
+            begin: RETURN_TYPE_REGEX,
             relevance: 0
           },
         ]
@@ -148,7 +151,7 @@ module.exports = function (hljs) {
           },
           {
             className: 'type',
-            begin: /(?<=:\s*)[\^A-Za-z_][A-Za-z0-9_.]*/,
+            begin: PARAM_TYPE_REGEX,
             relevance: 0
           },
         ]

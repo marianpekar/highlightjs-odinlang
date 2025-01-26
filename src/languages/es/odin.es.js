@@ -50,6 +50,9 @@ export default function (hljs) {
     "typeid_of"
   ];
 
+  const PARAM_TYPE_REGEX= /(?<=:\s*)[\[^A-Za-z_][A-Za-z0-9_.\][]*/
+  const RETURN_TYPE_REGEX = /(?<=->\s*)[\[A-Za-z_][A-Za-z0-9_.\][]*/
+
   return {
     name: "Odin",
     case_sensitive: true,
@@ -113,14 +116,14 @@ export default function (hljs) {
             contains: [
               {
                 className: 'type',
-                begin: /(?<=:\s*)[\^A-Za-z_][A-Za-z0-9_.]*/,
+                begin: PARAM_TYPE_REGEX,
                 relevance: 0
               },
             ]
           },
           {
-            className: 'type', // return type
-            begin: /(?<=->\s*)[A-Za-z_][A-Za-z0-9_.]*/,
+            className: 'type',
+            begin: RETURN_TYPE_REGEX,
             relevance: 0
           },
         ]
@@ -148,7 +151,7 @@ export default function (hljs) {
           },
           {
             className: 'type',
-            begin: /(?<=:\s*)[\^A-Za-z_][A-Za-z0-9_.]*/,
+            begin: PARAM_TYPE_REGEX,
             relevance: 0
           },
         ]

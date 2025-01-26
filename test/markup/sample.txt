@@ -8,6 +8,9 @@ Foo :: struct {
     z: bool
     bar: Bar
     bar_p: ^Bar
+    vector: [3]f32
+    dyn: [dynamic]Bar
+    matrix:[4][4]f32
 }
 
 main :: proc() {
@@ -17,6 +20,7 @@ main :: proc() {
     pi :: 3.14
     str := "Odin"
     r := 'O'
+    vector: [3]f32
 
     foo := new(Foo)
 
@@ -47,3 +51,5 @@ divide::proc(x:f32,y:f32)->f32{return x/y}
 increment :: proc(x: ^int) {
     x = x + 1
 }
+
+do_something_with_matrix :: proc(mat: [4][4]f32) -> [4][4]f32 { }
