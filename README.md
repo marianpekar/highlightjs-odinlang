@@ -23,7 +23,7 @@ Simply load the module after loading Highlight.js. You'll use the minified versi
 ```html
 <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/default.min.css">
 <script type="text/javascript" src="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/highlight.min.js"></script>
-<script type="text/javascript" src="https://unpkg.com/highlightjs-odinlang@1.2.1/dist/odin.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/highlightjs-odinlang@1.3.0/dist/odin.min.js"></script>
 ```
 
 #### ES6 Modules
@@ -32,7 +32,7 @@ Simply load the module after loading Highlight.js. You'll use the minified versi
 <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/default.min.css">
 <script type="module">
 import hljs from 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/highlight.min.js';
-import hljsOdin from 'https://unpkg.com/highlightjs-odinlang@1.2.1/dist/odin.es.min.js';
+import hljsOdin from 'https://unpkg.com/highlightjs-odinlang@1.3.0/dist/odin.es.min.js';
 hljs.registerLanguage('odin', hljsOdin);
 </script>
 ```

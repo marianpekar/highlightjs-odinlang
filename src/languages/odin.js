@@ -89,7 +89,7 @@ module.exports = function (hljs) {
         ]
       },
       {
-        className: 'function', // declaration
+        className: 'function', // function declaration
         begin: /\b([A-Za-z_][A-Za-z0-9_]*)\s*::\s*proc\b/,
         end: /[{\n]/,
         excludeEnd: true,
@@ -129,6 +129,10 @@ module.exports = function (hljs) {
         className: 'built_in', // function call
         begin: /\b(?!proc\b)([A-Za-z_][A-Za-z0-9_]*)(?=\s*\()/,
         excludeEnd: true,
+      },
+      {
+        className: 'title', // struct declaration
+        begin: /\b[A-Za-z_][A-Za-z0-9_]*(?=\s*::\s*struct\b)/,
       }
     ]
   };

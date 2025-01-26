@@ -2,7 +2,7 @@
 
 <span class="hljs-keyword">import</span> <span class="hljs-string">&quot;core:fmt&quot;</span>
 
-Foo :: <span class="hljs-keyword">struct</span> {
+<span class="hljs-title">Foo</span> :: <span class="hljs-keyword">struct</span> {
     x: <span class="hljs-type">int</span>,
     y: <span class="hljs-type">string</span>,
     z: <span class="hljs-type">bool</span>
