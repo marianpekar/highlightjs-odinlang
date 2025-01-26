@@ -50,8 +50,8 @@ module.exports = function (hljs) {
     "typeid_of"
   ];
   
-  const PARAM_TYPE_REGEX= /(?<=:\s*)[\[^A-Za-z_][A-Za-z0-9_.\][]*/
-  const RETURN_TYPE_REGEX = /(?<=->\s*)[\[A-Za-z_][A-Za-z0-9_.\][]*/
+  const PARAM_TYPE_REGEX= /(?<=:\s*)[\[^A-Za-z_][A-Za-z0-9_.\]^[]*/
+  const RETURN_TYPE_REGEX = /(?<=->\s*)[\[A-Za-z_][A-Za-z0-9_.\]^[]*/
   
   return {
     name: "Odin",

@@ -10,6 +10,7 @@
     bar_p: <span class="hljs-type">^Bar</span>
     vector: <span class="hljs-type">[3]f32</span>
     dyn: <span class="hljs-type">[dynamic]Bar</span>
+    dyn_p: <span class="hljs-type">[dynamic]^Bar</span>
     matrix:<span class="hljs-type">[4][4]f32</span>
 }</span>
 

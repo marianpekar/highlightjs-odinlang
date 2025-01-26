@@ -10,6 +10,7 @@ Foo :: struct {
     bar_p: ^Bar
     vector: [3]f32
     dyn: [dynamic]Bar
+    dyn_p: [dynamic]^Bar
     matrix:[4][4]f32
 }
 
