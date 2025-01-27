@@ -12,6 +12,10 @@ Foo :: struct {
     dyn: [dynamic]Bar
     dyn_p: [dynamic]^Bar
     matrix:[4][4]f32
+    rl_vec: rl.Vector2
+    rl_vec_arr: [4]rl.Vector2
+    rl_vec_p: ^rl.Vector2
+    rl_vec_p_arr: [4]^rl.Vector2
 }
 
 main :: proc() {
@@ -22,6 +26,9 @@ main :: proc() {
     str := "Odin"
     r := 'O'
     vector: [3]f32
+    p: ^int
+    
+    do_something_with(&x)
 
     foo := new(Foo)
 
@@ -47,10 +54,12 @@ multiply :: proc(x: int, y: int) -> f32 {
     return f32(x * y)
 }
 
-divide::proc(x:f32,y:f32)->f32{return x/y}
-
 increment :: proc(x: ^int) {
     x = x + 1
 }
 
 do_something_with_matrix :: proc(mat: [4][4]f32) -> [4][4]f32 { }
+
+make_rl_vector :: proc(x, y: f32) -> rl.Vector2 {
+    return rl.Vector2{x,y}
+}

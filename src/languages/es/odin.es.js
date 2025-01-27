@@ -50,8 +50,44 @@ export default function (hljs) {
     "typeid_of"
   ];
 
-  const PARAM_TYPE_REGEX= /(?<=:\s*)[\[^A-Za-z_][A-Za-z0-9_.\]^[]*/
-  const RETURN_TYPE_REGEX = /(?<=->\s*)[\[A-Za-z_][A-Za-z0-9_.\]^[]*/
+  const NUMBER_CONTENT = {
+    className: "number",
+    variants: [
+      hljs.C_NUMBER_MODE
+    ]
+  }
+
+  const DYNAMIC_KEYWORD_CONTENT =     {
+    className: 'keyword',
+    begin: /\bdynamic\b/,
+    relevance: 0
+  }
+
+  const CARET_AND_AMPERSAND_CONTENT =     {
+    className: 'meta',
+    begin: /[\^&]/,
+    relevance: 0
+  }
+
+  const RETURN_TYPE_CONTAINS = [
+    {
+      className: 'type',
+      begin: /(?:(?<=\^)|(?<=->\s?|]\s*))[A-Za-z_][A-Za-z0-9_.]*/,
+    },
+    NUMBER_CONTENT,
+    DYNAMIC_KEYWORD_CONTENT,
+    CARET_AND_AMPERSAND_CONTENT
+  ]
+
+  const STRUCT_AND_PARAM_TYPE_CONTAINS = [
+    {
+      className: 'type',
+      begin: /(?:(?<=\^)|(?<=:\s?|]\s*))[A-Za-z_][A-Za-z0-9_.]*/,
+    },
+    NUMBER_CONTENT,
+    DYNAMIC_KEYWORD_CONTENT,
+    CARET_AND_AMPERSAND_CONTENT
+  ];
 
   return {
     name: "Odin",
@@ -65,6 +101,7 @@ export default function (hljs) {
     },
     illegal: "</",
     contains: [
+      CARET_AND_AMPERSAND_CONTENT,
       hljs.C_LINE_COMMENT_MODE,
       hljs.C_BLOCK_COMMENT_MODE,
       {
@@ -95,7 +132,6 @@ export default function (hljs) {
         className: 'function', // function declaration
         begin: /\b([A-Za-z_][A-Za-z0-9_]*)\s*::\s*proc\b/,
         end: /[{\n]/,
-        excludeEnd: true,
         returnBegin: true,
         contains: [
           {
@@ -113,17 +149,14 @@ export default function (hljs) {
             begin: /\(/,
             end: /\)/,
             illegal: /["']/,
-            contains: [
-              {
-                className: 'type',
-                begin: PARAM_TYPE_REGEX,
-                relevance: 0
-              },
-            ]
+            contains: STRUCT_AND_PARAM_TYPE_CONTAINS
           },
           {
-            className: 'type',
-            begin: RETURN_TYPE_REGEX,
+            // return type
+            begin: /->/,
+            end: /\{/,
+            returnBegin: true,
+            contains: RETURN_TYPE_CONTAINS,
             relevance: 0
           },
         ]
@@ -150,8 +183,10 @@ export default function (hljs) {
             relevance: 0
           },
           {
-            className: 'type',
-            begin: PARAM_TYPE_REGEX,
+            begin: /(?<=:\s*)[\[^A-Za-z_][A-Za-z0-9_.\]^[]*/,
+            end: /\n/,
+            returnBegin: true,
+            contains: STRUCT_AND_PARAM_TYPE_CONTAINS,
             relevance: 0
           },
         ]
