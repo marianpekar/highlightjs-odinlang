@@ -23,7 +23,6 @@
 <span class="hljs-keyword">in</span>
 <span class="hljs-keyword">map</span>
 <span class="hljs-keyword">matrix</span>
-<span class="hljs-keyword">new</span>
 <span class="hljs-keyword">not_in</span>
 <span class="hljs-keyword">or_else</span>
 <span class="hljs-keyword">or_return</span>
