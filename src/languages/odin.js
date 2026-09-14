@@ -67,7 +67,6 @@ module.exports = function (hljs) {
     "return",
     "struct",
     "switch",
-    "typeid",
     "union",
     "using",
     "when",

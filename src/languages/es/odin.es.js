@@ -67,7 +67,6 @@ export default function (hljs) {
     "return",
     "struct",
     "switch",
-    "typeid",
     "union",
     "using",
     "when",
