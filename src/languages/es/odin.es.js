@@ -333,7 +333,7 @@ export default function (hljs) {
       },
       {
         className: 'built_in', // function call
-        begin: /\b(?!proc\b)([A-Za-z_][A-Za-z0-9_]*)(?=\s*\()/,
+        begin: /\b(?!(?:proc|if|for|switch|when)\b)([A-Za-z_][A-Za-z0-9_]*)(?=\s*\()/,
         excludeEnd: true,
       },
       {
